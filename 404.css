@@ -1,0 +1,68 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Container and Centering */
+.container {
+    animation: fadeIn 1s ease;
+}
+
+h1 {
+    font-size: 5rem;
+    margin-bottom: 10px;
+    animation: bounce 1.5s infinite alternate;
+}
+
+.message {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #cccccc;
+}
+
+.home-link {
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.home-link:hover {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}

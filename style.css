@@ -1,0 +1,207 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Snowfall Background */
+.snowfall-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('https://path/to/your/snowfall.gif');
+    background-size: cover;
+    opacity: 0.5;
+}
+
+/* Container and Centering */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    grid-template-columns: 1fr;
+}
+
+/* Card Styling */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.card p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #3d9440;
+}
+
+/* Light and Dark Theme Variables */
+:root {
+    --bg-light: #f9f9f9;
+    --bg-dark: #121212;
+    --text-light: #333;
+    --text-dark: #f9f9f9;
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #1e1e1e;
+    --text-muted-light: #555;
+    --text-muted-dark: #bbb;
+}
+
+body.light {
+    --bg: var(--bg-light);
+    --text: var(--text-light);
+    --card-bg: var(--card-bg-light);
+    --text-muted: var(--text-muted-light);
+}
+
+body.dark {
+    --bg: var(--bg-dark);
+    --text: var(--text-dark);
+    --card-bg: var(--card-bg-dark);
+    --text-muted: var(--text-muted-dark);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* Responsive Design */
+@media (min-width: 480px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 40px;
+}
+
+.watermark {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Theme Switcher */
+.theme-switch {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
